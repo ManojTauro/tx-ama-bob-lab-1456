@@ -266,17 +266,45 @@ The ModResorts source code has been pre-cloned to your home directory.
 
     Click **Start local deployment**. Bob will build the application, start a local Liberty server, inspect the logs, and report any runtime issues.
 
-### 4.3 Verifying the modernized application on Liberty
+### 4.3 Testing the modernized application on Liberty
 
-1. Once Bob confirms the deployment is successful, open **Firefox** and navigate to:
+Once Bob has completed the modernization and the build succeeds, you can start the application on a local Liberty server and verify it works correctly.
+
+**Start the Liberty server**
+
+1. In the IBM Bob IDE, open the **Explorer** panel on the left and scroll to the bottom. You will see the **Liberty Dashboard**.
+
+   ![Liberty Dashboard](images/modresorts_TestAppOnLiberty1.png)
+
+2. In the **Liberty Dashboard**, right-click on **modresorts** and choose **Start**.
+
+   ![Start Liberty](images/modresorts_TestAppOnLiberty2.png)
+
+   Liberty will build and start the application. Wait for the server to report that it is ready.
+
+**Test the application in the browser**
+
+3. Open **Firefox** and navigate to:
 
    **http://localhost:9080/resorts/**
 
-2. The ModResorts application opens. Click the **Where to?** dropdown and select **Cork, Ireland**. The page should render correctly.
+   ![ModResorts on Liberty](images/modresorts_TestAppOnLiberty3.png)
+
+4. The ModResorts application opens. Click the **Where to?** dropdown and select a destination such as **Cork, Ireland** or **Paris, France**. The page should render with weather details and no errors.
+
+   ![ModResorts Paris success](images/Bob_ModerResorts_Paris_Success.png)
 
    **Congratulations — ModResorts is now running on Liberty!**
 
-3. Review the **deployment summary** that Bob provides in the chat panel. It will confirm the modernization steps completed, files changed, and the branch where the changes were committed.
+5. Click the **Logout** button and verify there are no errors.
+
+**Stop the Liberty server**
+
+6. Switch back to IBM Bob. In the **Liberty Dashboard**, right-click on **modresorts** and choose **Stop**.
+
+   ![Stop Liberty](images/Bob_Stop_Liberty.png)
+
+7. Review the **deployment summary** that Bob provides in the chat panel. It confirms the modernization steps completed, files changed, and the branch where the changes were committed.
 
 ---
 
