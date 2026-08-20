@@ -113,18 +113,40 @@ AMA is designed to accelerate the modernization of your whole Java estate. In th
 
 ### 3.1 Launching Application Modernization Accelerator
 
-The first step is to start the AMA instance via the script provided.
+Application Modernization Accelerator (AMA) is already installed and typically running.
 
-1. Click **Activities** at the top left, and open **Terminal**.
-2. Run the following command:
+Let's check if AMA is already started. This can be validated by reviewing if the related podman containers are started.
+
+1. Click **Activities** at the top left and open **Terminal**.
+
+   ![Terminal toolbar](images/Toolbar_terminal.png)
+
+   The terminal window opens.
+
+   ![Terminal](images/Terminal.png)
+
+2. Access the AMA launch script to verify if AMA is started or not:
+
    ```bash
-   ./startAMA.sh
+   cd ~/usr/IBM/application-modernization-accelerator-local-*
+   ./launch.sh
    ```
 
-AMA will start. It takes about 1 minute to become available. When it has fully started a URL is provided. For simplicity in this lab AMA is already available as a bookmark in Firefox.
+   Check the status of AMA:
 
-1. Click **Activities** at the top left and open **Firefox**.
-2. Click the **AMA** bookmark in the toolbar to launch AMA.
+   - If AMA **is available** (see screenshot below), enter **q** to quit the menu and keep AMA running.
+
+     ![AMA Launcher running](images/AMA_Launcher.png)
+
+   - If AMA is **not running** (see screenshot below), enter **5** to start AMA.
+
+     ![AMA Launcher stopped](images/AMA_Launcher_stopped.png)
+
+   Wait until AMA has started and the URL is displayed.
+
+   ![AMA Launcher started](images/AMA_Launcher_started.png)
+
+3. Open **Firefox** from the Activities bar. AMA is available as a bookmark in the toolbar — click **AMA**.
 
    Alternatively, navigate directly to: **https://localhost:3000**
 
