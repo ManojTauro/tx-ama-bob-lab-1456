@@ -17,10 +17,9 @@
 
 ## Table of Contents
 
-1. [Access the lab guide](#1-access-the-lab-guide)
-   - 1.1 [Introduction](#11-introduction)
-   - 1.2 [About this hands-on lab](#12-about-this-hands-on-lab)
-2. [Using the lab environment](#2-using-the-lab-environment)
+1. [Introduction](#11-introduction)
+2. [About this hands-on lab](#12-about-this-hands-on-lab)
+3. [Using the lab environment](#2-using-the-lab-environment)
    - 2.1 [Logging in](#21-logging-in)
    - 2.2 [Accessing software](#22-accessing-software)
    - 2.3 [Sending text to the VM](#23-sending-text-to-the-vm)
@@ -42,13 +41,7 @@
 
 ---
 
-## 1. Access the lab guide
-
-Use this link to access the lab guide hosted in GitHub:
-
-**https://github.com/LarsBesselmann/LibertyGettingStarted-2026-AMA-Lab**
-
-### 1.1 Introduction
+## 1. Introduction
 
 Application Modernization Accelerator (AMA) is a modernization tool designed to scan and discover your entire Java application estate. Applications are scanned in place to collect their configuration, producing a detailed picture of the connections between applications, databases, and queues across the estate.
 
@@ -110,7 +103,7 @@ When copying commands from this guide into the VM:
 
 This guide is available at:
 
-**https://github.com/LarsBesselmann/LibertyGettingStarted-2026-AMA-Lab**
+**https://github.com/ManojTauro/tx-ama-bob-lab-1456**
 
 ---
 
@@ -305,7 +298,7 @@ Ensure you have completed the Liberty Modernization (section 4) before testing. 
 | AMA Swagger API (in VM) | https://localhost:2220/openapi/ui/ |
 | WAS Admin Console (in VM) | http://localhost:9060/ibm/console |
 | ModResorts Local (in VM) | http://localhost:9080/resorts |
-| Lab guide (GitHub) | https://github.com/LarsBesselmann/LibertyGettingStarted-2026-AMA-Lab |
+| Lab guide (GitHub) | https://github.com/ManojTauro/tx-ama-bob-lab-1456 |
 | Download AMA | https://www.ibm.com/account/reg/us-en/subscribe?formid=urx-53705 |
 | AMA Documentation | https://www.ibm.com/docs/en/ama |
 | IBM Bob | https://www.ibm.com/products/ibm-bob |
