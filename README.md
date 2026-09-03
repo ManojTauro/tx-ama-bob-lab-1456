@@ -55,33 +55,22 @@ AMA is designed to accelerate the modernization of your whole Java estate. In th
 
 ### 2.1 Launching Application Modernization Accelerator
 
-AMA may already be running in your lab environment. Check first before starting it manually.
+1. **Start AMA** — Open **Firefox** from the Activities bar and click the **AMA** bookmark in the toolbar (or navigate to **https://localhost:3000**).
 
-1. Open **Firefox** from the Activities bar and click the **AMA** bookmark in the toolbar.
+   - If the AMA homepage loads, continue to step 2.
+   - If the page does not load, open a **Terminal** from Activities and run:
 
-   Alternatively, navigate directly to: **https://localhost:3000**
+     ```bash
+     ./ama/startAMA.sh
+     ```
 
-   If AMA loads and shows the homepage, proceed to section 2.2.
+     Wait about 1 minute, then refresh Firefox. The AMA homepage will appear.
 
-2. If the page does not load, AMA needs to be started. Click **Activities** at the top left and open **Terminal**.
+     ![AMA Launcher started](images/AMA_Launcher_started.png)
 
-   ![Terminal toolbar](images/Toolbar_terminal.png)
+2. A cookie consent banner appears at the bottom of the page. Click **Accept All**.
 
-   The terminal window opens.
-
-   ![Terminal](images/Terminal.png)
-
-3. Run the following command:
-
-   ```bash
-   ./startAMA.sh
-   ```
-
-   AMA will start. It takes about 1 minute to become available. When it has fully started, a URL is displayed in the terminal.
-
-   ![AMA Launcher started](images/AMA_Launcher_started.png)
-
-4. Switch back to Firefox and click the **AMA** bookmark (or navigate to **https://localhost:3000**). The AMA homepage should now load.
+   ![Accept cookies](images/accept_cookie.png)
 
 ### 2.2 Visualization and Assessment
 
@@ -265,7 +254,6 @@ Wait approximately 1–2 minutes and then refresh the browser.
 
 **IBM Bob does not show the Liberty Modernization or Java Upgrade options**
 These workflows require the **Java Modernization Premium Package**. Verify that IBM Bob is fully loaded and that the Premium Package is active. If the option is missing, contact a lab instructor.
-```
 
 **The application starts but shows errors on the Cork, Ireland page**
 Ensure you have completed the Liberty Modernization (section 3) before testing. Remaining issues in the modernization panel may indicate that **Run automated fixes** was not executed.
