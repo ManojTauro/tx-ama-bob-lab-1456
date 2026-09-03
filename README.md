@@ -4,11 +4,6 @@
 
 1. [Introduction](#1-introduction)
    - 1.2 [About this hands-on lab](#12-about-this-hands-on-lab)
-2. [Using the lab environment](#2-using-the-lab-environment)
-   - 2.1 [Logging in](#21-logging-in)
-   - 2.2 [Accessing software](#22-accessing-software)
-   - 2.3 [Sending text to the VM](#23-sending-text-to-the-vm)
-   - 2.4 [Getting this guide](#24-getting-this-guide)
 3. [Modernizing your whole Java estate with Application Modernization Accelerator (AMA)](#3-modernizing-your-whole-java-estate-with-application-modernization-accelerator-ama)
    - 3.1 [Launching Application Modernization Accelerator](#31-launching-application-modernization-accelerator)
    - 3.2 [Visualization and Assessment](#32-visualization-and-assessment)
@@ -51,44 +46,6 @@ The main objective of this hands-on lab is to present an end-to-end overview of 
 **Liberty Modernization:** You will use AMA to assess the ModResorts application and download a migration plan. You will then use IBM Bob's Liberty Modernization workflow to apply automated code changes that move ModResorts from WebSphere Application Server traditional to Liberty. The starting point for this modernization is a Java EE 7 / Java SE 8 application — the minimum requirement for Liberty migration.
 
 Modernization is a complex area with many conflicting requirements. The goal is always to modernize as much as possible as quickly as possible, but in practice modernization is "one size fits none." AMA and IBM Bob are designed to let you develop a strategy that best suits your business needs and then to accelerate its implementation.
-
----
-
-## 2. Using the lab environment
-
-The lab environment has already been created with all the necessary data, tools, and software that you require.
-
-### 2.1 Logging in
-
-Click anywhere on the screen to get the login prompt.
-
-Use the following credentials:
-
-- **User:** `itzuser`
-- **Password:** `IBMDem0s`
-
-### 2.2 Accessing software
-
-Use the Activities menu to access available software:
-
-1. Click **Activities** at the top left.
-2. The software you will use includes:
-   - **Firefox** — for accessing AMA and the WAS admin console
-   - **IBM Bob** — the AI-powered IDE for code modernization
-   - **Terminal** — for running commands
-
-### 2.3 Sending text to the VM
-
-When copying commands from this guide into the VM:
-
-1. Click where you want to paste the text.
-2. Use standard clipboard paste or the text send tool in your console toolbar.
-
-### 2.4 Getting this guide
-
-This guide is available at:
-
-**https://github.com/ManojTauro/tx-ama-bob-lab-1456**
 
 ---
 
