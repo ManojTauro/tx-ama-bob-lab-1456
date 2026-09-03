@@ -1,25 +1,10 @@
-<!-- COVER PAGE -->
-
-![Cover Page](images/cover-page.jpg)
-
----
-
-<!-- NOTICES & DISCLAIMERS -->
-
-![Notices and Disclaimers (page 1)](images/notices-p1.jpg)
-
-![Notices and Disclaimers (page 2)](images/notices-p2.jpg)
-
----
-
-# Lab 1456
-# Modernize your Java applications faster with IBM Application Modernization Accelerator and IBM Bob
+# 1456: Practical Enterprise Java Modernization with IBM Application Modernization Accelerator & Bob
 
 ## Table of Contents
 
-1. [Introduction](#11-introduction)
-2. [About this hands-on lab](#12-about-this-hands-on-lab)
-3. [Using the lab environment](#2-using-the-lab-environment)
+1. [Introduction](#1-introduction)
+   - 1.2 [About this hands-on lab](#12-about-this-hands-on-lab)
+2. [Using the lab environment](#2-using-the-lab-environment)
    - 2.1 [Logging in](#21-logging-in)
    - 2.2 [Accessing software](#22-accessing-software)
    - 2.3 [Sending text to the VM](#23-sending-text-to-the-vm)
