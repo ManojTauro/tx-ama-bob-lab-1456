@@ -6,10 +6,10 @@
    - 1.2 [About this hands-on lab](#12-about-this-hands-on-lab)
 2. [Modernizing your whole Java estate with Application Modernization Accelerator (AMA)](#2-modernizing-your-whole-java-estate-with-application-modernization-accelerator-ama)
    - 2.1 [Launching Application Modernization Accelerator](#21-launching-application-modernization-accelerator)
-   - 2.2 [Visualization and Assessment](#22-visualization-and-assessment)
-     - 2.2.1 [Taking the tour](#221-taking-the-tour)
-     - 2.2.2 [Analyzing ModResorts](#222-analyzing-modresorts)
-   - 2.3 [Download the migration plan](#23-download-the-migration-plan)
+   - 2.2 [Create a workspace and upload scan data](#22-create-a-workspace-and-upload-scan-data)
+   - 2.3 [Visualization and Assessment](#23-visualization-and-assessment)
+     - 2.3.1 [Analyzing ModResorts](#231-analyzing-modresorts)
+   - 2.4 [Download the migration plan](#24-download-the-migration-plan)
 3. [Modernizing the runtime with IBM Bob — Liberty Modernization](#3-modernizing-the-runtime-with-ibm-bob--liberty-modernization)
    - 3.1 [Opening the ModResorts project in IBM Bob](#31-opening-the-modresorts-project-in-ibm-bob)
    - 3.2 [Modernizing to Liberty using the AMA migration plan](#32-modernizing-to-liberty-using-the-ama-migration-plan)
@@ -61,7 +61,7 @@ AMA is designed to accelerate the modernization of your whole Java estate. In th
    - If the page does not load, open a **Terminal** from Activities and run:
 
      ```bash
-     ./ama/startAMA.sh
+     ./startAMA.sh
      ```
 
      Wait about 1 minute, then refresh Firefox. The AMA homepage will appear.
@@ -72,35 +72,65 @@ AMA is designed to accelerate the modernization of your whole Java estate. In th
 
    ![Accept cookies](images/accept_cookie.png)
 
-### 2.2 Visualization and Assessment
+### 2.2 Create a workspace and upload scan data
+
+Before you can explore the estate, you need to create a workspace and upload the scan data collected by the Discovery Tool.
+
+**Create a workspace**
+
+1. On the AMA homepage, click **Create workspace**.
+
+   ![Create workspace](images/create_workspace.png)
+
+2. In the **Name your workspace** dialog, enter `tz_2026` as the workspace name. Leave **Include sample data** toggled off, then click **Create**.
+
+   ![Enter workspace name](images/enter_workspace_name.png)
+
+**Upload the scan data**
+
+3. The workspace opens to the **Discovered estate** page. Click **Upload results**.
+
+   ![Upload results](images/click_upload_results.png)
+
+4. The **Upload data** dialog opens. Click inside the file drop zone (**Drag and drop files here or click to upload**).
+
+   ![Click to upload](images/click_click_to_upload.png)
+
+5. A file browser opens. Navigate to **Student** and select **AppSrv01.zip**, then click **Open**.
+
+   ![Select AppSrv01.zip](images/select_AppSrv01_zip.png)
+
+6. The file appears in the drop zone. Click **Upload**.
+
+   ![Upload](images/click_upload.png)
+
+   AMA will process the scan data. Once complete, the estate view will populate with the discovered applications.
+
+### 2.3 Visualization and Assessment
 
 The visualization gives you a view of all your applications and their connections. This is very useful for understanding how applications relate to each other and to shared infrastructure such as databases and queues.
 
-#### 2.2.1 Taking the tour
+![Visualization screen](images/visualization_screen.png)
 
-To see the capabilities of the visualization we have a guided tour available.
-
-1. In Firefox, AMA should open to the default page. Click on the **TX2026** workspace.
-2. Click **Take a tour** in the top right-hand corner of the screen and follow the guided walkthrough.
-
-#### 2.2.2 Analyzing ModResorts
+#### 2.3.1 Analyzing ModResorts
 
 We will now focus on the ModResorts application.
 
-1. Click on **Applications** in the left nav to return to the full estate view.
-2. Click on the **Visualization** tab.
-3. In the Overview panel on the right-hand side, click **Apps** on the switcher and type `mod` in the search bar.
-4. Click on **modresorts-2_0_0_war.ear** in the list.
-5. The application node is highlighted in the visualization. Notice that this application has **no connections** to databases or messaging queues, which greatly simplifies its modernization and deployment.
-6. In the **Overview** panel on the right-hand side, click on the **modresorts-2_0_0_war.ear** hyperlink. A summary panel opens showing the application's complexity, estimated effort, and a **Details** button.
-7. You can see the application is listed as **Moderate** complexity with an estimated effort of **1.5 days**. Click the **Details** button.
-8. The application is marked with a complexity of **Moderate** and code changes **Part-automated**. IBM Bob will handle all of the required code changes automatically.
-9. On the left-hand side click on **Required code changes**. The screen will scroll down and show the configuration necessary to automate the code changes. We will use IBM Bob to apply these automatically.
-10. Scroll down to the **Issues** section. Review the Technology Issues listed. Issues marked **Critical** must be resolved before the application will run on Liberty. Issues marked **Informational** are expected to work but may behave unexpectedly — address these only if problems are found during testing.
+1. Click the **>** icon on the left edge of the screen to open the navigation panel.
+2. Click on **All Applications** in the left nav.
+3. Click on the **Visualization** tab.
+4. In the Overview panel on the right-hand side, click **Apps** on the switcher and type `mod` in the search bar.
+5. Click on **modresorts-2_0_0_war.ear** in the list.
+6. The application node is highlighted in the visualization. Notice that this application has **no connections** to databases or messaging queues, which greatly simplifies its modernization and deployment.
+7. In the **Overview** panel on the right-hand side, click on the **modresorts-2_0_0_war.ear** hyperlink. A summary panel opens showing the application's complexity, estimated effort, and a **Details** button.
+8. You can see the application is listed as **Moderate** complexity with an estimated effort of **1.5 days**. Click the **Details** button.
+9. The application is marked with a complexity of **Moderate** and code changes **Part-automated**. IBM Bob will handle all of the required code changes automatically.
+10. On the left-hand side click on **Required code changes**. The screen will scroll down and show the configuration necessary to automate the code changes. We will use IBM Bob to apply these automatically.
+11. Scroll down to the **Issues** section. Review the Technology Issues listed. Issues marked **Critical** must be resolved before the application will run on Liberty. Issues marked **Informational** are expected to work but may behave unexpectedly — address these only if problems are found during testing.
 
 ModResorts has no connections to external systems and IBM Bob will handle all code changes automatically — making it an excellent first application to modernize.
 
-### 2.3 Download the migration plan
+### 2.4 Download the migration plan
 
 We will now download the migration plan for ModResorts, which IBM Bob will use to guide the Liberty modernization.
 
@@ -174,7 +204,7 @@ The ModResorts source code has been pre-cloned to your home directory.
 
    ![Select Migration Plan](images/select-migration-plan.png)
 
-10. Click **Select File** under **AMA Zip Path** and select the migration plan zip file you downloaded from AMA in section 2.3 (`modresorts-2_0_0_war.ear_migrationPlan.zip`).
+10. Click **Select File** under **AMA Zip Path** and select the migration plan zip file you downloaded from AMA in section 2.4 (`modresorts-2_0_0_war.ear_migrationPlan.zip`).
 
 11. Click **Continue**. Bob will parse the migration plan, apply the required recipes, and automatically make all necessary code changes.
 
