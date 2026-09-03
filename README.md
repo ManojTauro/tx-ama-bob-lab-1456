@@ -4,20 +4,20 @@
 
 1. [Introduction](#1-introduction)
    - 1.2 [About this hands-on lab](#12-about-this-hands-on-lab)
-3. [Modernizing your whole Java estate with Application Modernization Accelerator (AMA)](#3-modernizing-your-whole-java-estate-with-application-modernization-accelerator-ama)
-   - 3.1 [Launching Application Modernization Accelerator](#31-launching-application-modernization-accelerator)
-   - 3.2 [Visualization and Assessment](#32-visualization-and-assessment)
-     - 3.2.1 [Taking the tour](#321-taking-the-tour)
-     - 3.2.2 [Analyzing ModResorts](#322-analyzing-modresorts)
-   - 3.3 [Download the migration plan](#33-download-the-migration-plan)
-4. [Modernizing the runtime with IBM Bob — Liberty Modernization](#4-modernizing-the-runtime-with-ibm-bob--liberty-modernization)
-   - 4.1 [Opening the ModResorts project in IBM Bob](#41-opening-the-modresorts-project-in-ibm-bob)
-   - 4.2 [Modernizing to Liberty using the AMA migration plan](#42-modernizing-to-liberty-using-the-ama-migration-plan)
-   - 4.3 [Testing the modernized application on Liberty](#43-testing-the-modernized-application-on-liberty)
-5. [Getting help and troubleshooting](#5-getting-help-and-troubleshooting)
-   - 5.1 [Reach out to the lab instructor](#51-reach-out-to-the-lab-instructor)
-   - 5.2 [Common troubleshooting tips](#52-common-troubleshooting-tips)
-6. [Lab Reference Materials](#6-lab-reference-materials)
+2. [Modernizing your whole Java estate with Application Modernization Accelerator (AMA)](#2-modernizing-your-whole-java-estate-with-application-modernization-accelerator-ama)
+   - 2.1 [Launching Application Modernization Accelerator](#21-launching-application-modernization-accelerator)
+   - 2.2 [Visualization and Assessment](#22-visualization-and-assessment)
+     - 2.2.1 [Taking the tour](#221-taking-the-tour)
+     - 2.2.2 [Analyzing ModResorts](#222-analyzing-modresorts)
+   - 2.3 [Download the migration plan](#23-download-the-migration-plan)
+3. [Modernizing the runtime with IBM Bob — Liberty Modernization](#3-modernizing-the-runtime-with-ibm-bob--liberty-modernization)
+   - 3.1 [Opening the ModResorts project in IBM Bob](#31-opening-the-modresorts-project-in-ibm-bob)
+   - 3.2 [Modernizing to Liberty using the AMA migration plan](#32-modernizing-to-liberty-using-the-ama-migration-plan)
+   - 3.3 [Testing the modernized application on Liberty](#33-testing-the-modernized-application-on-liberty)
+4. [Getting help and troubleshooting](#4-getting-help-and-troubleshooting)
+   - 4.1 [Reach out to the lab instructor](#41-reach-out-to-the-lab-instructor)
+   - 4.2 [Common troubleshooting tips](#42-common-troubleshooting-tips)
+5. [Lab Reference Materials](#5-lab-reference-materials)
 
 ---
 
@@ -49,11 +49,11 @@ Modernization is a complex area with many conflicting requirements. The goal is 
 
 ---
 
-## 3. Modernizing your whole Java estate with Application Modernization Accelerator (AMA)
+## 2. Modernizing your whole Java estate with Application Modernization Accelerator (AMA)
 
 AMA is designed to accelerate the modernization of your whole Java estate. In this lab you will take on the role of the modernization architect tasked with modernizing **InstantPayments**, an aging application infrastructure. The estate contains a mix of WebSphere ND 8.5.5 and 9.0.5, with Java versions ranging from 1.6 to 1.8, running on a variety of RHEL systems.
 
-### 3.1 Launching Application Modernization Accelerator
+### 2.1 Launching Application Modernization Accelerator
 
 The first step is to start the AMA instance via the script provided.
 
@@ -79,18 +79,18 @@ The first step is to start the AMA instance via the script provided.
 
    Alternatively, navigate directly to: **https://localhost:3000**
 
-### 3.2 Visualization and Assessment
+### 2.2 Visualization and Assessment
 
 The visualization gives you a view of all your applications and their connections. This is very useful for understanding how applications relate to each other and to shared infrastructure such as databases and queues.
 
-#### 3.2.1 Taking the tour
+#### 2.2.1 Taking the tour
 
 To see the capabilities of the visualization we have a guided tour available.
 
 1. In Firefox, AMA should open to the default page. Click on the **TX2026** workspace.
 2. Click **Take a tour** in the top right-hand corner of the screen and follow the guided walkthrough.
 
-#### 3.2.2 Analyzing ModResorts
+#### 2.2.2 Analyzing ModResorts
 
 We will now focus on the ModResorts application.
 
@@ -107,7 +107,7 @@ We will now focus on the ModResorts application.
 
 ModResorts has no connections to external systems and IBM Bob will handle all code changes automatically — making it an excellent first application to modernize.
 
-### 3.3 Download the migration plan
+### 2.3 Download the migration plan
 
 We will now download the migration plan for ModResorts, which IBM Bob will use to guide the Liberty modernization.
 
@@ -116,7 +116,7 @@ We will now download the migration plan for ModResorts, which IBM Bob will use t
 
 ---
 
-## 4. Modernizing the runtime with IBM Bob — Liberty Modernization
+## 3. Modernizing the runtime with IBM Bob — Liberty Modernization
 
 We will now use IBM Bob's **Liberty Modernization** workflow from the Java Modernization Premium Package to apply the code changes identified by AMA and move ModResorts to Liberty.
 
@@ -127,7 +127,7 @@ The starting state of the ModResorts application is:
 
 These are the minimum requirements for Liberty migration.
 
-### 4.1 Opening the ModResorts project in IBM Bob
+### 3.1 Opening the ModResorts project in IBM Bob
 
 The ModResorts source code has been pre-cloned to your home directory.
 
@@ -141,7 +141,7 @@ The ModResorts source code has been pre-cloned to your home directory.
 
    ![Open Bob Chat Panel](images/open-bob-chat-panel.png)
 
-### 4.2 Modernizing to Liberty using the AMA migration plan
+### 3.2 Modernizing to Liberty using the AMA migration plan
 
 **Step 1 — Open the Bob Workflows panel**
 
@@ -181,7 +181,7 @@ The ModResorts source code has been pre-cloned to your home directory.
 
    ![Select Migration Plan](images/select-migration-plan.png)
 
-10. Click **Select File** under **AMA Zip Path** and select the migration plan zip file you downloaded from AMA in section 3.3 (`modresorts-2_0_0_war.ear_migrationPlan.zip`).
+10. Click **Select File** under **AMA Zip Path** and select the migration plan zip file you downloaded from AMA in section 2.3 (`modresorts-2_0_0_war.ear_migrationPlan.zip`).
 
 11. Click **Continue**. Bob will parse the migration plan, apply the required recipes, and automatically make all necessary code changes.
 
@@ -195,7 +195,7 @@ The ModResorts source code has been pre-cloned to your home directory.
 
     Click **Start local deployment**. Bob will build the application, start a local Liberty server, inspect the logs, and report any runtime issues.
 
-### 4.3 Testing the modernized application on Liberty
+### 3.3 Testing the modernized application on Liberty
 
 Once Bob has completed the modernization and the build succeeds, you can start the application on a local Liberty server and verify it works correctly.
 
@@ -237,13 +237,13 @@ Once Bob has completed the modernization and the build succeeds, you can start t
 
 ---
 
-## 5. Getting help and troubleshooting
+## 4. Getting help and troubleshooting
 
-### 5.1 Reach out to the lab instructor
+### 4.1 Reach out to the lab instructor
 
 Lab instructors are available throughout the session to help with any issues and to answer questions about AMA, IBM Bob, and the modernization workflows.
 
-### 5.2 Common troubleshooting tips
+### 4.2 Common troubleshooting tips
 
 **The lab machine becomes unresponsive**
 In some cases the remote connection can be lost. Close the window and open the VM Console again.
@@ -264,11 +264,11 @@ These workflows require the **Java Modernization Premium Package**. Verify that 
 ```
 
 **The application starts but shows errors on the Cork, Ireland page**
-Ensure you have completed the Liberty Modernization (section 4) before testing. Remaining issues in the modernization panel may indicate that **Run automated fixes** was not executed.
+Ensure you have completed the Liberty Modernization (section 3) before testing. Remaining issues in the modernization panel may indicate that **Run automated fixes** was not executed.
 
 ---
 
-## 6. Lab Reference Materials
+## 5. Lab Reference Materials
 
 | Resource | URL |
 |---|---|
