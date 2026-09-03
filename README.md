@@ -55,9 +55,15 @@ AMA is designed to accelerate the modernization of your whole Java estate. In th
 
 ### 2.1 Launching Application Modernization Accelerator
 
-The first step is to start the AMA instance via the script provided.
+AMA may already be running in your lab environment. Check first before starting it manually.
 
-1. Click **Activities** at the top left and open **Terminal**.
+1. Open **Firefox** from the Activities bar and click the **AMA** bookmark in the toolbar.
+
+   Alternatively, navigate directly to: **https://localhost:3000**
+
+   If AMA loads and shows the homepage, proceed to section 2.2.
+
+2. If the page does not load, AMA needs to be started. Click **Activities** at the top left and open **Terminal**.
 
    ![Terminal toolbar](images/Toolbar_terminal.png)
 
@@ -65,7 +71,7 @@ The first step is to start the AMA instance via the script provided.
 
    ![Terminal](images/Terminal.png)
 
-2. Run the following command:
+3. Run the following command:
 
    ```bash
    ./startAMA.sh
@@ -75,9 +81,7 @@ The first step is to start the AMA instance via the script provided.
 
    ![AMA Launcher started](images/AMA_Launcher_started.png)
 
-3. For simplicity, AMA is already available as a bookmark in Firefox. Open **Firefox** from the Activities bar and click the **AMA** bookmark in the toolbar.
-
-   Alternatively, navigate directly to: **https://localhost:3000**
+4. Switch back to Firefox and click the **AMA** bookmark (or navigate to **https://localhost:3000**). The AMA homepage should now load.
 
 ### 2.2 Visualization and Assessment
 
