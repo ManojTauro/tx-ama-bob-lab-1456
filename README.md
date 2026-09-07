@@ -10,10 +10,14 @@
    - 2.3 [Visualization and Assessment](#23-visualization-and-assessment)
      - 2.3.1 [Analyzing ModResorts](#231-analyzing-modresorts)
    - 2.4 [Download the migration plan](#24-download-the-migration-plan)
+   - 2.5 [AMA Recap](#25-ama-recap)
 3. [Modernizing the runtime with IBM Bob — Liberty Modernization](#3-modernizing-the-runtime-with-ibm-bob--liberty-modernization)
-   - 3.1 [Opening the ModResorts project in IBM Bob](#31-opening-the-modresorts-project-in-ibm-bob)
-   - 3.2 [Modernizing to Liberty using the AMA migration plan](#32-modernizing-to-liberty-using-the-ama-migration-plan)
-   - 3.3 [Testing the modernized application on Liberty](#33-testing-the-modernized-application-on-liberty)
+   - 3.1 [Setting up Git configuration](#31-setting-up-git-configuration)
+   - 3.2 [Opening the ModResorts project in IBM Bob](#32-opening-the-modresorts-project-in-ibm-bob)
+   - 3.3 [Log into IBM Bob](#33-log-into-ibm-bob)
+   - 3.4 [Set up IBM Premium Package for Java Modernization](#34-set-up-ibm-premium-package-for-java-modernization)
+   - 3.5 [Modernizing to Liberty using the AMA migration plan](#35-modernizing-to-liberty-using-the-ama-migration-plan)
+   - 3.6 [Testing the modernized application on Liberty](#36-testing-the-modernized-application-on-liberty)
 4. [Getting help and troubleshooting](#4-getting-help-and-troubleshooting)
    - 4.1 [Reach out to the lab instructor](#41-reach-out-to-the-lab-instructor)
    - 4.2 [Common troubleshooting tips](#42-common-troubleshooting-tips)
@@ -117,12 +121,25 @@ We will now focus on the ModResorts application.
 3. Click on the **Visualization** tab.
 4. In the Overview panel on the right-hand side, click **Apps** on the switcher and type `mod` in the search bar.
 5. Click on **modresorts-2_0_0_war.ear** in the list.
+
+   ![Click ModResorts in Apps list](images/click_modresorts-2_0_0.jpeg)
+
 6. The application node is highlighted in the visualization. Notice that this application has **no connections** to databases or messaging queues, which greatly simplifies its modernization and deployment.
 7. In the **Overview** panel on the right-hand side, a summary panel opens showing the application's complexity, estimated effort, and a **Details** button.
+
+   ![Overview details](images/overview_details.png)
+
 8. You can see the application is listed as **Moderate** complexity with an estimated effort of **1.5 days**. Click the **Details** button.
 9. The application is marked with a complexity of **Moderate** and code changes **Part-automated**. IBM Bob will handle all of the required code changes automatically.
 10. On the left-hand side click on **Required code changes**. The screen will scroll down and show the configuration necessary to automate the code changes. We will use IBM Bob to apply these automatically.
+
+    ![Required code changes](images/required_code_changes.jpeg)
+
 11. Scroll down to the **Issues** section. Review the Technology Issues listed. Issues marked **Critical** must be resolved before the application will run on Liberty. Issues marked **Informational** are expected to work but may behave unexpectedly — address these only if problems are found during testing.
+
+    ![Issues section](images/issues_section.png)
+
+    ![Expanded unique code issues](images/expanded_unique_code_issues.png)
 
 ModResorts has no connections to external systems and IBM Bob will handle all code changes automatically — making it an excellent first application to modernize.
 
@@ -131,7 +148,25 @@ ModResorts has no connections to external systems and IBM Bob will handle all co
 We will now download the migration plan for ModResorts, which IBM Bob will use to guide the Liberty modernization.
 
 1. Click on the **View migration plan** button in the top right-hand corner of the ModResorts details page.
+
+   ![Click View migration plan](images/click_view_migration_plan.jpeg)
+
 2. Click the **Download plan** button. Save the file that is generated — you will need it in the next section.
+
+   ![Download migration plan](images/download_migration_plan.png)
+
+### 2.5 AMA Recap
+
+Congratulations, you have finished the application assessment part.
+
+Let’s recap what you did so far:
+
+- You installed and tested the modresorts application on a traditional WAS instance
+- You ran the AMA Discovery Tool to assess a WebSphere cell
+- You assessed the modresorts application
+- You generated a migration plan
+
+You will then use IBM Bob to modernize the application.
 
 ---
 
@@ -146,21 +181,153 @@ The starting state of the ModResorts application is:
 
 These are the minimum requirements for Liberty migration.
 
-### 3.1 Opening the ModResorts project in IBM Bob
+### 3.1 Setting up Git configuration
 
-The ModResorts source code has been pre-cloned to your home directory.
+Before starting the modernization workflow in IBM Bob, configure your Git user identity in the terminal so that Bob can automatically create branches and commit changes.
 
-1. Click **Activities** and open **IBM Bob**.
-2. Choose **File → Open Folder** and navigate to:
+1. Open a **Terminal** window (from Activities or by switching to your existing terminal).
+2. Run the following commands to configure your Git name and email:
+
+   ```bash
+   git config --global user.name "ITZ User"
+   git config --global user.email "itzuser@ibm.com"
    ```
-   /home/itzuser/Student/modresorts-project
+
+### 3.2 Opening the ModResorts project in IBM Bob
+
+The ModResorts source code has been pre-cloned to your system.
+
+1. In the **Terminal**, navigate to the ModResorts project directory and launch the IBM Bob IDE:
+
+   ```bash
+   cd /home/itzuser/Desktop/Student/modresorts-project
+   bobide . &
    ```
-3. Click **Open**. The ModResorts project will load in the Explorer panel on the left.
-4. Ensure the **Bob chat panel** is open on the right-hand side. If it is not visible, click the **Toggle Secondary Side Bar** button in the top-right corner of the window (or press **⌥⌘B**).
+
+   *(Alternatively, click **Activities** and open **IBM Bob**).*
+
+2. When the IDE opens, handle initial dialogs if they appear:
+   - If a **Welcome** panel appears offering to import settings, click **Skip for now**:
+
+     ![Bob Import Panel](images/media/Bob_Import_Panel.png)
+
+   - If an update pop-up appears, click settings and select **Keep current version**:
+
+     ![Bob Update Available](images/media/Bob_UpdateAvailable.png)
+
+     ![Bob Keep current version](images/media/Bob_Keep_current_version.png)
+
+   - If a **Bob Getting Started** panel appears, close it:
+
+     ![Bob Getting Started](images/media/Bob_Getting_Started.png)
+
+   - If you see a pop-up during the lab asking to install something, close it without installation by clicking the **X**:
+
+     ![Bob Popup](images/media/Bob_Popup2.png)
+
+   - Look at the bottom left of your window to check if Bob runs in **Restricted Mode**:
+
+     ![Bob Restricted Mode](images/media/Bob_RestrictedMode2.png)
+
+     If so, click on **Restricted Mode** to open the panel:
+
+     ![Bob Restricted Mode Panel](images/media/Bob_RestrictedMode1.png)
+
+     Then click on **Trust** to make this workspace trusted:
+
+     ![Bob Trust](images/media/Bob_RestrictedMode3.png)
+
+     Finally, close the pop-up by clicking **X**:
+
+     ![Bob Close Popup](images/media/Bob_RestrictedMode4.png)
+
+   - If a **Migration** panel appears, click **Skip migration**:
+
+     ![Bob Skip Migration](images/media/Bob_Skip_Migration.png)
+
+3. If the project is not already loaded, open the project folder:
+   - Choose **File → Open Folder** and navigate to:
+     ```
+     /home/itzuser/Desktop/Student/modresorts-project
+     ```
+   - Click **Open**. The ModResorts project will load in the Explorer panel on the left.
+
+4. Ensure the **Bob chat panel** is open on the right-hand side. If it is not visible, click the **Toggle Secondary Side Bar** button in the top-right corner of the window (or press **⌥⌘B** / click the **Bob** icon).
 
    ![Open Bob Chat Panel](images/open-bob-chat-panel.png)
 
-### 3.2 Modernizing to Liberty using the AMA migration plan
+### 3.3 Log into IBM Bob
+
+1. On the right side of the IDE, click on the button **Log in to Bob**:
+
+   ![Bob Login](images/media/Bob_Login.png)
+
+2. On the pop-up, click on **Allow**:
+
+   ![Bob signup](images/media/Bob_signup.png)
+
+   Click on **Open**:
+
+   ![Bob signup 2](images/media/Bob_signup2.png)
+
+   A browser window will open.
+
+   ![Bob signup 3](images/media/Bob_signup3.png)
+
+3. Choose a way of login and enter your login credentials:
+
+   ![Bob signup 4](images/media/Bob_signup4.png)
+
+   *(The example uses SSO with IBMid).*
+
+4. On the new browser page, select **Open Link**:
+
+   ![Bob signup 5](images/media/Bob_signup5.png)
+
+   You should see a panel confirming authentication:
+
+   ![Bob signup 6](images/media/Bob_signup6.png)
+
+5. Switch back to the IBM Bob IDE and you will see a prompt:
+
+   ![Bob signup 7](images/media/Bob_signup7.png)
+
+   Click on **Open**. You now have access to IBM Bob and the chat window:
+
+   ![Bob signup 8](images/media/Bob_signup8.png)
+
+### 3.4 Set up IBM Premium Package for Java Modernization
+
+Verify that you use an account that has access to the IBM Premium Package for Java Modernization.
+
+1. On the upper right part of the Bob IDE, click on the **Settings** icon. Then check the account:
+
+   ![Bob premium user](images/media/Bob_premium_user.png)
+
+   If you have a user with access to the premium package, it is listed under add-ons.
+
+2. Install the premium package extension:
+   1. In the list of **Add-ons**, click on the **Install** button next to **IBM Premium Package for Java Modernization**:
+
+      ![Bob premium user install](images/media/Bob_premium_user_install.png)
+
+   2. In the pop-up, click on **Trust Publisher & Install**:
+
+      ![Bob trust publisher and install](images/media/Bob_premium_user_install2.png)
+
+   3. Once installed, you will see the package listed as installed:
+
+      ![Bob premium user installed](images/media/Bob_premium_user_installed.png)
+
+   4. If the **IBM Bob** panel on the right is not open, click on the **Bob** icon to open it:
+
+      ![Bob open panel](images/media/Bob_Open_Bob_Panel.png)
+
+   5. In the **IBM Bob** panel, click on the workflow icon (▶) and review the Bob workflows that are offered, including the ones for Liberty Modernization:
+
+      ![Bob premium user workflows](images/media/Bob_premium_user_Workflows.png)
+
+### 3.5 Modernizing to Liberty using the AMA migration plan
 
 **Step 1 — Open the Bob Workflows panel**
 
@@ -214,7 +381,7 @@ The ModResorts source code has been pre-cloned to your home directory.
 
     Click **Start local deployment**. Bob will build the application, start a local Liberty server, inspect the logs, and report any runtime issues.
 
-### 3.3 Testing the modernized application on Liberty
+### 3.6 Testing the modernized application on Liberty
 
 Once Bob has completed the modernization and the build succeeds, you can start the application on a local Liberty server and verify it works correctly.
 
