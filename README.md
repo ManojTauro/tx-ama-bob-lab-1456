@@ -33,10 +33,6 @@ IBM Bob is an AI-powered development environment built on VS Code. In this lab y
 
 - **Liberty Modernization** — analyzes your application and applies automated code changes required to move from WebSphere Application Server traditional to Liberty, using an AMA migration plan to guide the process.
 
-<!-- PLACEHOLDER: Replace the image below with the final "How AMA and IBM Bob work" diagram page when available -->
-
-> **TODO:** Insert "How AMA and IBM Bob work" diagram here.
-
 In this lab the installation of AMA and the execution of the Discovery Tool has already been completed for you.
 
 ### 1.2 About this hands-on lab
@@ -122,7 +118,7 @@ We will now focus on the ModResorts application.
 4. In the Overview panel on the right-hand side, click **Apps** on the switcher and type `mod` in the search bar.
 5. Click on **modresorts-2_0_0_war.ear** in the list.
 6. The application node is highlighted in the visualization. Notice that this application has **no connections** to databases or messaging queues, which greatly simplifies its modernization and deployment.
-7. In the **Overview** panel on the right-hand side, click on the **modresorts-2_0_0_war.ear** hyperlink. A summary panel opens showing the application's complexity, estimated effort, and a **Details** button.
+7. In the **Overview** panel on the right-hand side, a summary panel opens showing the application's complexity, estimated effort, and a **Details** button.
 8. You can see the application is listed as **Moderate** complexity with an estimated effort of **1.5 days**. Click the **Details** button.
 9. The application is marked with a complexity of **Moderate** and code changes **Part-automated**. IBM Bob will handle all of the required code changes automatically.
 10. On the left-hand side click on **Required code changes**. The screen will scroll down and show the configuration necessary to automate the code changes. We will use IBM Bob to apply these automatically.
