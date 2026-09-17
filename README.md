@@ -104,6 +104,10 @@ Before you can explore the estate, you need to create a workspace and upload the
 
    ![Upload](images/click_upload.png)
 
+7. The **Manage destination** dialog opens. Select **Liberty** as the destination, ensure **Standard edition** is set to **Java SE 8**, and click **Confirm**.
+
+   ![Select Liberty and Confirm](images/select_liberty.png)
+
    AMA will process the scan data. Once complete, the estate view will populate with the discovered applications.
 
 ### 2.3 Visualization and Assessment
